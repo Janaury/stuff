@@ -1,0 +1,52 @@
+import random
+
+def holdAnimal():
+    #config parameters
+    total_animal_max = 100
+    single_space_max = int(1e4)
+    single_point_max = int(1e4)
+    for i in range(case_num):
+        a = int(random.random() * total_animal_max)
+        print(a)
+        count = 0
+        for i in range(a):
+            f = int(random.random() * single_space_max)
+            s = int(random.random() * single_point_max)
+            print("{f} {s}".format(f=f,s=s))
+            count = count + f
+
+        ts = int(count / 2)
+        if ts > 1e5:
+            ts = int(1e5)
+
+        print(ts)
+
+def cherryblossom():
+    symmetry = False
+    total_point_max = 100
+    coor_max = 10000
+    for i in range(case_num):
+        s = []
+        point_amount = int(random.random() * total_point_max / 2) * 2
+        print(point_amount)
+        axis = int(random.random() * coor_max)
+        for j in range(point_amount):
+            if len(s) != 0:
+                x, y = s.pop()
+                print("{x} {y}".format(x=x,y=y))
+                continue
+            x = int(random.random()*coor_max)
+            y1 = int(random.random() * axis)
+            if symmetry is True:
+                y2 = 2 * axis - y1
+                s.append((x,y2))
+            print("{x} {y}".format(x=x,y=y1))
+        
+
+
+
+
+case_num = 3
+generator = cherryblossom
+
+generator()
