@@ -42,7 +42,22 @@ def cherryblossom():
                 s.append((x,y2))
             print("{x} {y}".format(x=x,y=y1))
         
-
+def thinkandcount():
+    MAX = 2000
+    for i in range(case_num):
+        row = int(random.random() * MAX)
+        col = int(random.random() * MAX)
+        
+        def rand_letter():
+            num = int(random.random() * 2) 
+            if num is 0:
+                return 'w'
+            else:
+                return 'b'
+        print("{row} {col}".format(row=row,col=col))
+        for i in range(row):
+            row_content = [rand_letter() for i in range(col)]
+            print(''.join(row_content))
 
 
 
