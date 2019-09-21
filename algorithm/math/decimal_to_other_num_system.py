@@ -9,6 +9,7 @@ NUMBER_TABLE = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c',
 USAGE='第一个参数为需要转换的10进制数字，第二个参数为进制，默认是2'
 stack = []
 
+# 默认转为2进制
 num_system = 2
 if len(sys.argv) <= 1:
     print(USAGE)

@@ -2,7 +2,6 @@
 
 int modPower(int base, int exponent, int mod){
     int total = 1;
-    int square_im = base;
 
     while(exponent != 0){
         if (exponent & 0x1 == 1) {
