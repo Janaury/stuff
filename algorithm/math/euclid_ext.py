@@ -30,10 +30,10 @@ def gcd_ext(big_num, small_num):
         s = remainder
         t = -iq
         return (s, t, remainder)
-    s_next, t_next, gcd = gcd_ext(small_num, remainder)
-    # print("s t q(%d, %d, %d)"%(s_next, t_next, iq))
-    s = t_next
-    t = s_next - t_next * iq
+    s_last, t_last, gcd = gcd_ext(small_num, remainder)
+    # print("s t q(%d, %d, %d)"%(s_last, t_last, iq))
+    s = t_last
+    t = s_last - t_last * iq
     return (s, t, gcd)
     
 
@@ -53,4 +53,4 @@ if abs(num_big) < abs(num_small):
     num_small = tmp
 
 s, t, gcd = gcd_ext(num_big, num_small)
-print("%d * %d + %d * %d = %d"%(s, num_big, t, num_small, gcd))
+print("%d * %d + %d * %d = %d"%(s, num_big, t, num_small, s * num_big + t * num_small))
